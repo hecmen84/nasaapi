@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+ crossorigin=""></script>
+ 
+  <link rel="stylesheet" href="./css/style.css">
+  
+  
+  <title>Nasa API</title>
+</head>
+<body id="body">
+<header>
+  <h1>
+      Get image from NASA Satellite
+  </h1>
+  <section class="search">
+    <input type="text" class="ipc" name="point" id="point" placeholder=" Type latitude and longitude">
+    <button id="button">
+      <div class="arrow"></div>
+    </button>
+  </section>
+  <section class="display-info-container">
+    <div class="display-info">
+      <div class="info-box">
+        <p>IP ADDRESS</p>
+        <div class="display ip">
+          
+        </div>
+      </div>
+      <div class="info-box">
+          <p>CITY</p>
+          <div class="display city">
+            
+          </div>
+      </div>
+      <div class="info-box">
+          <p>TIME ZONE</p>
+          <div class="display timezone">
+            
+          </div>
+      </div>
+      <div class="info-box">
+          <p>ISP</p>
+          <div class="display isp">
+            
+          </div>
+      </div>
+    </div>
+  </section>
+</header>
+<div id="mapid">
+
+</div>
+  
+  <script type='module' src="./script/map.js"></script>  
+   
+  <script type='module' src="./script/nasaApi.js "></script>  
+  <script type='module' src="./script/app.js"></script>
+</body>
+</html>
