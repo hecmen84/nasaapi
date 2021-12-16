@@ -1,25 +1,28 @@
 
 const getNasaApiData = async(lat, long) => {
-  const API_NASA = 'IZLFYzNHo0wNWbflY6H8XSbbmUEdu8GMJkVXYfLd';
-  const url = `https://api.nasa.gov/planetary/earth/imagery?lon=${long}&lat=${lat}&date=2021-01-01&dim=0.25&api_key=${API_NASA}`;
-  
-  fetch(url, {
-   headers: {
-       Authorization: 'Bearer EqFyi1Yq1tD9mxY8F38sxDfp73pFd7FP'
-   } 
-})
-.then((response) => response.blob())
-.then((blob) => {
-    const imageUrl = URL.createObjectURL(blob);
-    console.log(imageUrl)
-    const img = document.querySelector('img');
-    img.addEventListener('load', () => URL.revokeObjectURL(imageUrl));
-    document.querySelector('img').src = imageUrl;
-    console.log(imageUrl)
-    //return imageUrl;
-});
-  
-  //return base64data;
+  try{
+    const API_NASA = 'IZLFYzNHo0wNWbflY6H8XSbbmUEdu8GMJkVXYfLd';
+    const url = `https://api.nasa.gov/planetary/earth/assets?lon=${long}&lat=${lat}&date=2014-02-01&dim=0.15&api_key=${API_NASA}`
+    loaderOnOff('flex');
+    const response = await fetch(url);
+    const dataImg = await response.json();
+    const img = document.createElement('img');
+    img.classList.add('img');
+    img.src = dataImg.url;    
+    document.getElementById('img1').src = dataImg.url;
+    loaderOnOff('none');
+  } catch (e){
+    alert('Something went wrong, try again');
+  }
+}
+//show/hide a loader while data is transfered from API
+const loaderOnOff = (display) => {
+  const box = document.getElementById('box');
+  if(display == 'flex'){
+    box.style.display = 'flex';
+  } else {
+    box.style.display = 'none';
+  }
 }
 
 export {  getNasaApiData };

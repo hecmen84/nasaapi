@@ -17,17 +17,19 @@
   <title>Nasa API</title>
 </head>
 <body id="body">
+    
 <header>
   <h1>
-      Get image from NASA Satellite
+      Get images from NASA Satellite
   </h1>
+  <div>Type latitude and longitude</div>
   <section class="search">
-    <input type="text" class="ipc" name="point" id="point" placeholder=" Type latitude and longitude">
-    <button id="button">
+    <input type="text" class="ipc" name="point" id="point" placeholder="EJ: 13.685599, -89.16068">
+    <button type="button" id="button">
       <div class="arrow"></div>
     </button>
   </section>
-  <section class="display-info-container">
+  <!-- <section class="display-info-container">
     <div class="display-info">
       <div class="info-box">
         <p>IP ADDRESS</p>
@@ -54,15 +56,48 @@
           </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </header>
-<div id="mapid">
-
+<div class="box" id="box">
+    <div class="container">
+      <span class="circle"></span>
+      <span class="circle"></span>
+      <span class="circle"></span>
+      <span class="circle"></span>
+    </div>
 </div>
+<div class="img-container">
+  <div class="img-box">
+      <img class="img" src="" alt="" id="img1">
+  </div>
+  <div class="img-box">
+      <img class="img" src="" alt="" id="img2">
+  </div>
+  <div class="img-box">
+      <img class="img" src="" alt="" id="img3">
+  </div>
+  <div class="img-box">
+      <img class="img" src="" alt="" id="img4">
+  </div>
+  <div class="img-box">
+      <img class="img" src="" alt="" id="img5">
+  </div>
+  <div class="img-box">
+      <img class="img" src="" alt="" id="img6">
+  </div>
+  <div class="img-box">
+      <img class="img" src="" alt="" id="img7">
+  </div>
+  <div class="img-box">
+      <img class="img" src="" alt="" id="img8">
+  </div>
+  <div class="img-box">
+      <img class="img" src="" alt="" id="img9">
+  </div>
   
-  <script type='module' src="./script/map.js"></script>  
-   
-  <script type='module' src="./script/nasaApi.js "></script>  
-  <script type='module' src="./script/app.js"></script>
+  
+</div>
 </body>
+<script type='module' src="./script/nasaApi.js "></script>  
+  <script type='module' src="./script/app.js"></script>
 </html>
